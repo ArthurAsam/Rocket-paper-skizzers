@@ -1,11 +1,11 @@
-
+//Options the computer has to select from
 const cpuOptions = ["rock", "paper", "scissors"]; 
 
 
- 
+ //get random selection from computer
 function getComputerChoice() {
     
-                
+                // length of the array is 3 so * 3 would also work
     const randomOption = cpuOptions[Math.floor(Math.random() * cpuOptions.length)]
     
     return randomOption; 
@@ -15,6 +15,7 @@ function getComputerChoice() {
 
 let computerSelection = getComputerChoice();
 
+//Allows selection to be case insensitive 
 let playerSelection = prompt("Choose: rock, paper, or scissors", "").toLowerCase(); 
 
         
@@ -42,12 +43,15 @@ let playerSelection = prompt("Choose: rock, paper, or scissors", "").toLowerCase
                 //Highlight ties!
             } else if (computerSelection === "scissors" && playerSelection === "scissors") {
                 return 'You tied! You both chose scissors'
+                //Else statement accounts for unverifiable user inputs
             } else {
                 return 'Error'
             }
         }
-        
+        //calls function and prints to console any returns
         console.log(playRound(playerSelection, computerSelection))
+
+// Part One of the RPS game
 
 
 
